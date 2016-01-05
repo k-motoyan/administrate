@@ -18,7 +18,17 @@ module Administrate
     end
 
     def path_method_name(namespace, resource)
-      # todo
+      if uncountable_name?(resource)
+        "#{namespace}_#{resource}_index_path"
+      else
+        "#{namespace}_#{resource}_path"
+      end
+    end
+
+    private
+
+    def uncountable_name?(str)
+      ActiveSupport::Inflector.inflections.uncountable.include?(str.to_s)
     end
   end
 end
