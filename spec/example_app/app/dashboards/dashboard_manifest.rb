@@ -14,6 +14,7 @@ class DashboardManifest
     :line_items,
     :orders,
     :products,
+    :information,
   ]
 
   # `ROOT_DASHBOARD`
