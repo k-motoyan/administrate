@@ -41,4 +41,20 @@ RSpec.describe Administrate::ApplicationHelper do
       end
     end
   end
+
+  describe "#path_method_name" do
+    let(:namespace) { "admin" }
+
+    subject { path_method_name(namespace, resource) }
+
+    context "when resource is uncountable" do
+      let(:resource) { "information" }
+      it { is_expected.to eq "#{namespace}_#{resource}_index_path" }
+    end
+
+    context "when resource is countable" do
+      let(:resource) { "blog" }
+      it { is_expected.to eq "#{namespace}_#{resource}_path" }
+    end
+  end
 end

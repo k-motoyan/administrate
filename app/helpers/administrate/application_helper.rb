@@ -16,5 +16,9 @@ module Administrate
           default: resource_name.to_s.pluralize.titleize,
         )
     end
+
+    def path_method_name(namespace, resource)
+      # todo
+    end
   end
 end
