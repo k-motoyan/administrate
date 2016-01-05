@@ -17,8 +17,8 @@ module Administrate
         )
     end
 
-    def path_method_name(namespace, resource)
-      if uncountable_name?(resource)
+    def index_path_method_name(namespace, resource)
+      if uncountable_noun?(resource)
         "#{namespace}_#{resource}_index_path"
       else
         "#{namespace}_#{resource}_path"
@@ -27,7 +27,7 @@ module Administrate
 
     private
 
-    def uncountable_name?(str)
+    def uncountable_noun?(str)
       ActiveSupport::Inflector.inflections.uncountable.include?(str.to_s)
     end
   end

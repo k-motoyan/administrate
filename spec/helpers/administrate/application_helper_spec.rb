@@ -42,10 +42,10 @@ RSpec.describe Administrate::ApplicationHelper do
     end
   end
 
-  describe "#path_method_name" do
+  describe "#index_path_method_name" do
     let(:namespace) { "admin" }
 
-    subject { path_method_name(namespace, resource) }
+    subject { index_path_method_name(namespace, resource) }
 
     context "when resource is uncountable" do
       let(:resource) { "information" }
